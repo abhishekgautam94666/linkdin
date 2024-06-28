@@ -14,6 +14,7 @@ import { Images } from "lucide-react";
 import { useRef, useState } from "react";
 import { readFileAsDataUrl } from "@/lib/utils";
 import { createPostAction } from "@/lib/serveractions";
+import { toast } from "sonner";
 
 export function PostDialog({
   setOpen,
@@ -66,7 +67,16 @@ export function PostDialog({
             </div>
           </DialogTitle>
         </DialogHeader>
-        <form action={postAction}>
+        <form
+          action={(formData) => {
+            const promise = postAction(formData);
+            toast.promise(promise, {
+              loading: "creating post...",
+              success: "Post created",
+              error: "Failed to create post",
+            });
+          }}
+        >
           <div className="flex flex-col">
             <Textarea
               id="name"

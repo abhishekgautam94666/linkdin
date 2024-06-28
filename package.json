@@ -21,6 +21,7 @@
     "lucide-react": "^0.395.0",
     "mongoose": "^8.4.1",
     "next": "14.2.4",
+    "next-themes": "^0.3.0",
     "react": "^18",
     "react-dom": "^18",
     "react-timeago": "^7.2.0",
