@@ -4,13 +4,21 @@ import SearchInput from "./SearchInput";
 import NavItems from "./NavItems";
 import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { Button } from "./ui/button";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
     <div className="fixed w-full bg-white z-50 shadow-sm">
       <div className=" flex items-center max-w-6xl justify-between h-14 mx-auto px-3">
         <div className="flex items-center gap-2">
-          <Image src={"/LinkedIn_logo.png"} alt="Logo" width={35} height={35} />
+          <Link href={"/"}>
+            <Image
+              src={"/LinkedIn_logo.png"}
+              alt="Logo"
+              width={35}
+              height={35}
+            />
+          </Link>
           <div className="md:block hidden">
             <SearchInput />
           </div>
